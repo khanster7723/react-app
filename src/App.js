@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Switch, Route } from 'react-router-dom';
+//import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Tracker from './components/Tracker/Tracker';
+import Login from './components/Login/Login';
 
+//import { Cards, Chart, CountryPicker } from './components';
+//import styles from './App.module.css';
+//import { fetchData, fetchDataOfIndianState } from './api';
+
+//import coronaImage from './images/image.png';
+
+class App extends React.Component {
+
+  render() {
+    return (
+      <Switch>
+        <Route exact path="/" component={Login}></Route>
+        <Route path="/tracker" component={Tracker}></Route>
+      </Switch>
+    )
+  }
+}
 export default App;
